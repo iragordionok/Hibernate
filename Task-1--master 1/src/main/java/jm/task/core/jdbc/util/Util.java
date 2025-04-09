@@ -15,14 +15,6 @@ public class Util {
     private static final String PASSWORD = "Ira13503";
     private static SessionFactory sessionFactory;
 
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("PostgreSQL JDBC Driver not found", e);
-        }
-        return DriverManager.getConnection(URL, USER, PASSWORD);
-    }
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
